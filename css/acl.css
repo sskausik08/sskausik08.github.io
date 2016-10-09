@@ -189,11 +189,11 @@ body{
 	margin: 0px auto;
 }
 
-#maincontent #onecol #pubTitle {
+#maincontent #onecol #pubAuthor {
 	font-style: oblique;
 }
-#maincontent #onecol #pubAuthor {
-	margin: 10px 0px 0px 0px;
+#maincontent #onecol #pubTitle {
+	/*margin: 10px 0px 0px 0px;*/
 	font-weight: 700;
 }
 
