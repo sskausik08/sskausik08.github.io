@@ -1,0 +1,109 @@
+<head>
+<title>Genesis: Artifact Evaluation</title>
+</head>
+
+<body>
+	<h1> Genesis: Synthesizing Forwarding Tables in Multi-tenant Networks</h1>
+	<b>Abstract</b>: <br>
+	<p> Operators in multi-tenant cloud datacenters re- quire support for diverse and complex end-to-end policies, such as, reachability, middlebox traversals, isolation, traffic engineering, and network resource management. We present Genesis, a data-center network management system which allows policies to be specified in a declarative manner without explicitly programming the network data plane. Genesis tackles the problem of enforcing policies by synthesizing switch forwarding tables. It uses the formal foundations of constraint solving in combination with fast off-the-shelf SMT solvers. To improve synthesis performance, Genesis incorporates a novel search strategy that uses regular expressions to specify properties that leverage the structure of datacenter networks, and a divide-and-conquer synthesis procedure which exploits the structure of policy relationships. We have prototyped Genesis, and conducted experiments with a variety of workloads on real-world topologies to demonstrate its performance.
+	</p>
+	<a href="genesis.ova"><h4> Download Genesis Virtual Machine [2 GB] </h4></a>
+
+	All test scripts and README.txt can be found in the $HOME/Genesis/AEC folder. <br>
+	Refer to <a href="Genesis-AEC-Readme.txt">README.txt</a> for detailed instructions on code organization, running 
+	Genesis, GPL syntax and evaluation scripts. 
+
+	<h3> Running Genesis </h3>
+The Virtual Machine (Ubuntu 14.04) comes with all packages installed. 
+To run Genesis, go to the $HOME/Genesis folder and use the terminal to run Genesis:
+<pre><code>
+	python -O genesis.py -topo [topology-filename] -gpl [gpl-filename]
+</code></pre>
+To run Genesis with <b>tactic</b> enabled:
+<pre><code>
+	python -O genesis.py -topo [topology-filename] -gpl [gpl-filename] -useTactic [tactic]
+</code></pre>
+
+Our current implementation supports 4 tactics that can be supplied as arguments: 
+<ul>
+	<li> <b>noEdge</b> : the edge-to-edge path will not contain another edge switch in the path </li>
+	<li> <b>valleyFree</b> : valley-free routing, that is paths are of the form eacae </li>
+	<li> <b>len7</b> : Length of path <= 7 </li>
+	<li> <b>noEdgeLen7</b> : Length of path <= 7 and does not contain another path. </li>
+</ul>
+[Note: these tactics assume that each paths start and end at edge switches. New tactics
+can be added to generalize these tactics] <br> <br>
+
+To run Genesis using <b>divide-and-conquer</b> synthesis: 
+<pre><code>
+	python -O genesis.py -topo [topology-filename] -gpl [gpl-filename] -dc
+</code></pre>
+
+To run Genesis for <b>network repair</b>:
+<pre><code>
+	python -O genesis.py -topo [topology-filename] -gpl [gpl-filename] -repair
+</code></pre>
+</body>
+
+<h3> GPL syntax </h3>
+To define a packet class(pc) -
+<pre><code>
+	p0_0 := tcp.port = 0 : e14 >> e17
+</code></pre>
+[pc-name] :=  [network-predicate] : [source-sw] >> [destination-sw]
+
+The current implementation of Genesis simply uses the network predicate as 
+a string. For actual network deployments, the network predicate would 
+translate to SDN Match rules.
+
+To add waypoints to a reachability policy:
+<pre><code>
+	e11 >> [ a29, a24; a20, a28 ] >> e2 
+</code></pre>
+which enforces that [a29, a24] must be traversed before [a20, a28] in the path,
+and ordering in a set is irrelevant.
+
+To define an isolation policy using the packet class names-
+<pre><code>
+	pc1 || pc2 
+</code></pre>
+To define isolation among different sets of classes - 
+<pre><code>
+	[pc1, pc2] || [pc3, pc4] 
+</code></pre>
+This translates to: <code> pc1 || pc3 and pc1 || pc4 and pc2 || pc3 and pc2 || p4 </code> 
+<br><br>
+To define a link capacity policy:
+<pre><code>
+	e11 -> a28 : capacity-value
+</code></pre>
+To define a switch table size policy:
+<pre><code>
+	e11 : size
+</code></pre>
+TE Objective: Minimizing the average link utilization -
+<pre><code>
+	minimize-avg-te
+</code></pre>
+TE Objective: Minimizing the average link utilization -
+<pre><code>
+	minimize-max-te 
+</code></pre>
+
+
+<h3> Installing Genesis on Ubuntu 14.04 </h3>
+
+Genesis comes with a install script intended to install 
+all dependencies of Genesis. The install script can be found
+in the Genesis directory - install 
+
+Copy install to $HOME, and from $HOME, run on terminal:
+<pre><code>
+	chmod +x install
+	sudo ./install
+</code></pre>
+Open a new terminal to run Genesis (.bash_profile updated by install)
+
+If you get errors regarding METIS, ensure that 
+environment variable $METIS_DLL points to $HOME/libmetis.so
+
