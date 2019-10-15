@@ -1,0 +1,270 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Kausik}{Subramanian}
+%\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+%\address{4 N Park Street, #407, Madison WI, 53715}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+%\phone[mobile]{+1 608 960 5568}                   % optional, remove / comment the line if not wanted
+%\phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{sskausik08@gmail.com / sskausik08@cs.wisc.edu}                               % optional, remove / comment the line if not wanted
+\homepage{pages.cs.wisc.edu/~sskausik08}                         % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\small{My research interests lie in the application of formal reasoning and programming languages techniques for verification and synthesis of networks. In recent times, networks have become increasingly complex and difficult to reason about and manage. My vision envisages developing techniques for verifiying and correctly programming networks based on intent, where operators should specify what the network should do, instead of how these intents are met.}
+
+\section{Education}
+
+\vspace{5pt}
+
+\begin{itemize}
+%\item{\cventry{}{M.S Computer Science  \hfill \emph{Fall 2017--Present}}{University of Wisconsin-Madison}{Madison}
+%	{}{CGPA: 3.804/4.00}
+%	{PhD Computer Science \hfill \emph{Fall 2017--Present}}\newline
+%	{Advisors: Aditya Akella and Loris D'Antoni}}
+%\vspace{3pt}
+%\item{\cventry{2011--2015}{BTech. Computer Science and Engineering}{Indian Institute of Technology, Bombay}{Bombay}{}
+%	{Advisors: Purushottam Kulkarni and Umesh Bellur}}
+
+\item \textbf{University of Wisconsin-Madison} \\
+\emph{M.S Computer Science}, CGPA: 3.868/4.00  \hfill \emph{Fall 2015--Fall 2017} \\
+\emph{PhD Computer Science}, Advisors: Aditya Akella and Loris D'Antoni   \hfill \emph{Fall 2017--Present} \\
+
+\item \textbf{Indian Institute of Technology, Bombay} \\
+\emph{BTech. Computer Science and Engineering} \hfill Fall 2011-Spring 2015 \\
+Advisors: Purushottam Kulkarni and Umesh Bellur
+
+\end{itemize}
+
+\vspace*{1pt}
+
+\section{Publications}
+\begin{itemize}
+	\item \textbf{Genesis: Synthesizing Forwarding Tables in Multi-tenant Networks} \\
+	\underline{Kausik Subramanian}, Loris D’Antoni, and Aditya Akella \\
+	\emph{44th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL), Paris, France, 2017, (23\% acceptance rate)}
+	\begin{itemize}
+		\item A general and extensible approach to synthesize policy-compliant
+		SDN forwarding tables for multi-tenant cloud settings using SMT solvers.
+		Can support complex policies like reachability, waypoint traversal, path
+		isolation and traffic engineering
+	\end{itemize}
+	\vspace*{4mm}
+
+	\item \textbf{Synthesis of Fault-Tolerant Distributed Router
+		Configurations} \\
+\underline{Kausik Subramanian}, Loris D’Antoni, and Aditya Akella \\
+	\emph{Proceedings of the ACM on Measurement and Analysis of Computing Systems - SIGMETRICS, Irvine, California, USA, 2018}
+	\begin{itemize}
+		\item A two phase synthesis algorithm for generating policy-compliant
+		OSPF and BGP configurations which comply with high-level policies, even
+		under failures. First, we use Genesis to synthesize a policy-compliant
+		data plane, and then Zeppelin uses ILP solvers to generate OSPF and BGP
+		configurations which converge to the policy-compliant data plane.
+	\end{itemize}
+	\vspace*{4mm}
+
+	
+	\item \textbf{Detecting Network Load Violations for Distributed Control Planes} \\
+	\underline{Kausik Subramanian}, Anubhavnidhi Abhashkumar, Loris D’Antoni, Aditya Akella and Yibo Zhu \\
+	\emph{Under submission}
+	\begin{itemize}
+		\item By using an abstract representation of the control plane (ARC), we
+		formulate a multi-node Mixed-Integer Linear Program which can be used to
+		verify across machines if network links are overloaded (utilization
+		exceeds capacity) under different failure scenarios. QARC models
+		different routing protocols like OSPF and BGP and distributed load
+		balancing strategies like ECMP/WCMP.
+	\end{itemize}
+	\vspace*{4mm}
+
+	\item \textbf{D2R: Dataplane-Only Policy-Compliant Routing Under Failures} \\
+	\underline{Kausik Subramanian}, Anubhavnidhi Abhashkumar, Loris D’Antoni, and Aditya Akella \\
+	\emph{Under submission}
+	\begin{itemize}
+		\item We design a network architecture where routing (computing active
+		network paths) is done completely in the data plane using programmable
+		P4 switches. Packets carry failure information and each switch can
+		perform graph traversal algorithms completely in the data planes at near line 
+		rates, and thus, avoiding losses incurred due to slow control planes.
+	\end{itemize}
+\end{itemize}
+
+\vspace{2pt}
+
+\section{Experience}
+\begin{itemize}
+	\item \textbf{Facebook Menlo Park, USA} \hfill \emph{Summer 2019} \\
+	\emph{Software Engineering Intern}, Network Routing \hfill Mentors: Mahesh Maddikayala
+	\begin{itemize}
+		\item Worked on OpenR (https://github.com/facebook/openr), Facebook's internal routing platform. I implemented the 
+		Netlink protocol for OpenR ($\sim$3k LoC) to interface with the Linux kernel to program routes and listen to link/address/route events 
+		for protocol convergence.
+	\end{itemize}
+	\vspace*{6pt}
+
+	\item \textbf{Microsoft Research, Cambridge, UK} \hfill \emph{Summer 2018} \\
+	\emph{Research Intern}, Network Verification \hfill Mentors: Andrey Rybalchenko and Nuno Lopes
+	\begin{itemize}
+		\item Worked on developing a framework to for global MPLS tunnel path allocation for Microsoft's 
+		Wide Area Network. Using the framework, we analyse current production network allocation with 
+		the optimal allocation to make recommendations for improvements and future planning of the WAN.
+	\end{itemize}
+	\vspace*{6pt}
+
+	\item \textbf{Barefoot Networks, Santa Clara} \hfill \emph{Summer 2017} \\
+	\emph{Research Intern}, Advanced Applications \hfill Mentors: JK Lee, Robert Soule and Changhoon Kim
+	\begin{itemize}
+		\item Implemented various static analysis techniques for optimizing P4 programs in the Barefoot Tofino backend compiler 
+		pertaining to table dependencies and metadata usage based on P4 
+		developers' programming styles. Made several
+		bug fixes to the open-source P4 compiler \href{https://github.com/p4lang/p4c}{(https://github.com/p4lang/p4c)}.
+	\end{itemize}
+	\vspace*{6pt}
+	
+	\item \textbf{Samsung Electronics, Suwon, South Korea} \hfill \emph{Summer 2014} \\
+	\emph{Research Intern, Software R\&D Center} \hfill Mentors: Jeongshik In and Jaehoon Ko
+	\begin{itemize}
+		\item Proposed four Optimizations for Hadoop's Distributed File System. Analysed and 
+		modified the source code of HDFS to find the performance bottlenecks and add features to 
+		block placement and replication policy modules.
+	\end{itemize}
+	\vspace*{6pt}
+	\item \textbf{Fraunhofer ITWM, Kaiserslautern, Germany} \hfill \emph{Summer 2013} \\
+	\emph{Research Intern} \hfill Mentor: Mirko Rahn
+		\begin{itemize}
+			\item Implemented the Chord distributed hash table protocol using Fraunhofer's communication middleware GPI, which provides
+			synchronous and asynchronous communication methods
+		\end{itemize}
+	
+\end{itemize}
+
+\vspace{2pt}
+
+\section{Talks and Posters}
+\begin{itemize}
+\item Zeppelin: Synthesis of Fault-Tolerant Distributed Router Configurations \\
+\emph{Talk at SIGMETRICS'18, Irvine, California, USA} 
+
+\item Genesis: Synthesizing Forwarding Tables in Multi-tenant Networks \\
+\emph{Talk at POPL'17, Paris, France} \\
+\emph{Talk at VMWare Research Group, August 2017}
+
+\item Synthesizing Data and Control Planes for Multi-tenant Networks \\
+\emph{Poster at Google Networking Research Summit 2017} \\
+\emph{Poster at NSF workshop on Programmable Networks, NYU, 2018}
+\end{itemize}
+\section{Academic  Honors}
+\begin{itemize}
+\item{Awarded the UW-Madison CS Summer Research Assistantship, 2016 (awarded to 6 people).}
+\item{Awarded Student Grants to attend SIGCOMM 2016, POPL 2017 and SIGMETRICS 2018.}
+\item{Secured All India Rank 87 in IIT-JEE 2011 out of 485,000 students.}
+\item{Secured All India Rank 3 in $10^{th}$ CBSE Board Examination, 2009. Was invited by the PM's Office to witness the Republic Day Parade from the Prime Minister Box in New Delhi in 2010}
+\end{itemize}
+
+\section{Technical and Personal skills}
+\begin{itemize}
+\item Proficient in Python, C++, Java, Z3, Gurobi, \LaTeX, P4
+\item Familiar with Android, Hadoop, POX
+\end{itemize}
+
+\section{Courses}
+\begin{itemize}
+	\item \emph{Networks/Systems}: Advanced Networking, Big Data Systems
+	\item \emph{Programming Languages}: Program Verification and Synthesis,
+	Theory of Programming Languages, Advanced Compilation
+	\item \emph{Pedagogy}: Teaching in the College Classroom, Effective
+	Teaching in Internationally Diverse College Classroom 
+	\item \emph{Miscellaneous}: Topics in Databases, Advanced Algorithms,
+	Computational Complexity Theory, Management and Marketing, and Accounting and Finance
+	for non-Business majors
+\end{itemize}
+
+\section{Positions of Responsibility}
+\begin{itemize}
+\item Mentor, Institute Student Mentorship Programme \hfill 2014-15 \\
+Mentoring a group of 12 freshmen and easing their transition to the academic and social aspects of institute life. Also serving as a Department Academic Mentor to 12 sophomores, guiding them about CS academic aspects.
+
+\item Internship Coordinator, Placement Cell \hfill 2013-14 \\
+Involved in the communication and scheduling of various companies as well as universities and assisting them in the process of recruiting of students for internships. Awarded Certificate of Appreciation by Dean, Academic Affairs for exemplary work during the tenure.
+
+\end{itemize}
+
+\section{Teaching}
+\begin{itemize}
+	\item Teaching Assistant, Computer Networks (CS640) \\
+	University of Wisconsin-Madison \hfill Fall 2015 \\
+	Prof. Paul Barford
+	
+	\item Teaching Assistant, Compilers Lab (CS306) \\
+	Indian Institute of Technology, Bombay \hfill Spring 2015 \\
+	Prof. Amitabha Sanyal
+\end{itemize}
+
+
+%% Publications from a BibTeX file without multibib
+%%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.
