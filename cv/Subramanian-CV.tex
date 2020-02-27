@@ -72,7 +72,7 @@
 
 \item \textbf{University of Wisconsin-Madison} \\
 \emph{M.S Computer Science}, CGPA: 3.868/4.00  \hfill \emph{Fall 2015--Fall 2017} \\
-\emph{PhD Computer Science}, Advisors: Aditya Akella and Loris D'Antoni   \hfill \emph{Fall 2017--Present} \\
+\emph{PhD Computer Science}, Advisors: Aditya Akella and Loris D'Antoni   \hfill \emph{Fall 2017--Summer 2020 (Expected)} \\
 
 \item \textbf{Indian Institute of Technology, Bombay} \\
 \emph{BTech. Computer Science and Engineering} \hfill Fall 2011-Spring 2015 \\
@@ -84,34 +84,9 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 
 \section{Publications}
 \begin{itemize}
-	\item \textbf{Genesis: Synthesizing Forwarding Tables in Multi-tenant Networks} \\
-	\underline{Kausik Subramanian}, Loris D’Antoni, and Aditya Akella \\
-	\emph{44th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL), Paris, France, 2017, (23\% acceptance rate)}
-	\begin{itemize}
-		\item A general and extensible approach to synthesize policy-compliant
-		SDN forwarding tables for multi-tenant cloud settings using SMT solvers.
-		Can support complex policies like reachability, waypoint traversal, path
-		isolation and traffic engineering
-	\end{itemize}
-	\vspace*{4mm}
-
-	\item \textbf{Synthesis of Fault-Tolerant Distributed Router
-		Configurations} \\
-\underline{Kausik Subramanian}, Loris D’Antoni, and Aditya Akella \\
-	\emph{Proceedings of the ACM on Measurement and Analysis of Computing Systems - SIGMETRICS, Irvine, California, USA, 2018}
-	\begin{itemize}
-		\item A two phase synthesis algorithm for generating policy-compliant
-		OSPF and BGP configurations which comply with high-level policies, even
-		under failures. First, we use Genesis to synthesize a policy-compliant
-		data plane, and then Zeppelin uses ILP solvers to generate OSPF and BGP
-		configurations which converge to the policy-compliant data plane.
-	\end{itemize}
-	\vspace*{4mm}
-
-	
 	\item \textbf{Detecting Network Load Violations for Distributed Control Planes} \\
-	\underline{Kausik Subramanian}, Anubhavnidhi Abhashkumar, Loris D’Antoni, Aditya Akella and Yibo Zhu \\
-	\emph{Under submission}
+	\underline{Kausik Subramanian}, Anubhavnidhi Abhashkumar, Loris D’Antoni, and Aditya Akella \\
+	\emph{Proceedings of 41st ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI 2020), London, UK, (22\% acceptance rate)}
 	\begin{itemize}
 		\item By using an abstract representation of the control plane (ARC), we
 		formulate a multi-node Mixed-Integer Linear Program which can be used to
@@ -122,14 +97,52 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 	\end{itemize}
 	\vspace*{4mm}
 
-	\item \textbf{D2R: Dataplane-Only Policy-Compliant Routing Under Failures} \\
+	\item \textbf{Liveness Verification of Stateful Network Functions} \\
+	Farnaz Yousefi, Anubhavnidhi Abhashkumar, \underline{Kausik Subramanian}, Kartik Hans, Soudeh Ghorbani, and Aditya Akella \\
+	\emph{Proceedings of 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 2020), Santa Clara, California, USA, (18\% acceptance rate)}
+	\begin{itemize}
+		\item Liveness properties are important for stateful network function verification.
+		In this work, we provide a compositional programming abstraction that decouples
+		reachability from stateful network functions and model the behavior of the
+		programs expressed in
+		this abstraction using compact Boolean formulas.
+		We provide a compiler that translates the
+		programs written using our abstraction to P4 programs.
+	\end{itemize}
+	\vspace*{4mm}
+
+	\item \textbf{Synthesis of Fault-Tolerant Distributed Router
+		Configurations} \\
+\underline{Kausik Subramanian}, Loris D’Antoni, and Aditya Akella \\
+	\emph{Proceedings of the ACM on Measurement and Analysis of Computing Systems (SIGMETRICS 2018), Irvine, California, USA}
+	\begin{itemize}
+		\item A two phase synthesis algorithm for generating policy-compliant
+		OSPF and BGP configurations which comply with high-level policies, even
+		under failures. First, we use Genesis to synthesize a policy-compliant
+		data plane, and then Zeppelin uses ILP solvers to generate OSPF and BGP
+		configurations which converge to the policy-compliant data plane.
+	\end{itemize}
+	\vspace*{4mm}
+
+	\item \textbf{Genesis: Synthesizing Forwarding Tables in Multi-tenant Networks} \\
+	\underline{Kausik Subramanian}, Loris D’Antoni, and Aditya Akella \\
+	\emph{44th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL 2017), Paris, France, (23\% acceptance rate)}
+	\begin{itemize}
+		\item A general and extensible approach to synthesize policy-compliant
+		SDN forwarding tables for multi-tenant cloud settings using SMT solvers.
+		Can support complex policies like reachability, waypoint traversal, path
+		isolation and traffic engineering
+	\end{itemize}
+	\vspace*{4mm}
+
+	\item \textbf{D2R: Dataplane-Only Policy-Compliant Hierarchical Routing} \\
 	\underline{Kausik Subramanian}, Anubhavnidhi Abhashkumar, Loris D’Antoni, and Aditya Akella \\
 	\emph{Under submission}
 	\begin{itemize}
 		\item We design a network architecture where routing (computing active
 		network paths) is done completely in the data plane using programmable
 		P4 switches. Packets carry failure information and each switch can
-		perform graph traversal algorithms completely in the data planes at near line 
+		performs hierarchical graph traversal algorithms completely in the data planes at near line
 		rates, and thus, avoiding losses incurred due to slow control planes.
 	\end{itemize}
 \end{itemize}
@@ -138,20 +151,25 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 
 \section{Experience}
 \begin{itemize}
-	\item \textbf{Facebook Menlo Park, USA} \hfill \emph{Summer 2019} \\
+	\item \textbf{Facebook Menlo Park, USA} \hfill \emph{Summer 2019, Nov 2019-Present} \\
 	\emph{Software Engineering Intern}, Network Routing \hfill Mentors: Mahesh Maddikayala
 	\begin{itemize}
-		\item Worked on OpenR (https://github.com/facebook/openr), Facebook's internal routing platform. I implemented the 
-		Netlink protocol for OpenR ($\sim$3k LoC) to interface with the Linux kernel to program routes and listen to link/address/route events 
+		\item Worked on OpenR (https://github.com/facebook/openr), Facebook's internal routing platform. I implemented the
+		Netlink protocol for OpenR ($\sim$3k LoC) to interface with the Linux kernel to program routes and listen to link/address/route events
 		for protocol convergence.
+	\end{itemize}
+	\emph{Research Collaborator}, Network Routing \hfill Mentors: Hyojeong Kim, James Zeng
+	\begin{itemize}
+		\item Worked on presenting Facebook's operational experience of
+		deploying and running an in-house BGP implementation in their data centers.
 	\end{itemize}
 	\vspace*{6pt}
 
 	\item \textbf{Microsoft Research, Cambridge, UK} \hfill \emph{Summer 2018} \\
 	\emph{Research Intern}, Network Verification \hfill Mentors: Andrey Rybalchenko and Nuno Lopes
 	\begin{itemize}
-		\item Worked on developing a framework to for global MPLS tunnel path allocation for Microsoft's 
-		Wide Area Network. Using the framework, we analyse current production network allocation with 
+		\item Worked on developing a framework to for global MPLS tunnel path allocation for Microsoft's
+		Wide Area Network. Using the framework, we analyse current production network allocation with
 		the optimal allocation to make recommendations for improvements and future planning of the WAN.
 	\end{itemize}
 	\vspace*{6pt}
@@ -159,18 +177,18 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 	\item \textbf{Barefoot Networks, Santa Clara} \hfill \emph{Summer 2017} \\
 	\emph{Research Intern}, Advanced Applications \hfill Mentors: JK Lee, Robert Soule and Changhoon Kim
 	\begin{itemize}
-		\item Implemented various static analysis techniques for optimizing P4 programs in the Barefoot Tofino backend compiler 
-		pertaining to table dependencies and metadata usage based on P4 
+		\item Implemented various static analysis techniques for optimizing P4 programs in the Barefoot Tofino backend compiler
+		pertaining to table dependencies and metadata usage based on P4
 		developers' programming styles. Made several
 		bug fixes to the open-source P4 compiler \href{https://github.com/p4lang/p4c}{(https://github.com/p4lang/p4c)}.
 	\end{itemize}
 	\vspace*{6pt}
-	
+
 	\item \textbf{Samsung Electronics, Suwon, South Korea} \hfill \emph{Summer 2014} \\
 	\emph{Research Intern, Software R\&D Center} \hfill Mentors: Jeongshik In and Jaehoon Ko
 	\begin{itemize}
-		\item Proposed four Optimizations for Hadoop's Distributed File System. Analysed and 
-		modified the source code of HDFS to find the performance bottlenecks and add features to 
+		\item Proposed four Optimizations for Hadoop's Distributed File System. Analysed and
+		modified the source code of HDFS to find the performance bottlenecks and add features to
 		block placement and replication policy modules.
 	\end{itemize}
 	\vspace*{6pt}
@@ -180,7 +198,7 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 			\item Implemented the Chord distributed hash table protocol using Fraunhofer's communication middleware GPI, which provides
 			synchronous and asynchronous communication methods
 		\end{itemize}
-	
+
 \end{itemize}
 
 \vspace{2pt}
@@ -188,7 +206,7 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 \section{Talks and Posters}
 \begin{itemize}
 \item Zeppelin: Synthesis of Fault-Tolerant Distributed Router Configurations \\
-\emph{Talk at SIGMETRICS'18, Irvine, California, USA} 
+\emph{Talk at SIGMETRICS'18, Irvine, California, USA}
 
 \item Genesis: Synthesizing Forwarding Tables in Multi-tenant Networks \\
 \emph{Talk at POPL'17, Paris, France} \\
@@ -218,7 +236,7 @@ Advisors: Purushottam Kulkarni and Umesh Bellur
 	\item \emph{Programming Languages}: Program Verification and Synthesis,
 	Theory of Programming Languages, Advanced Compilation
 	\item \emph{Pedagogy}: Teaching in the College Classroom, Effective
-	Teaching in Internationally Diverse College Classroom 
+	Teaching in Internationally Diverse College Classroom
 	\item \emph{Miscellaneous}: Topics in Databases, Advanced Algorithms,
 	Computational Complexity Theory, Management and Marketing, and Accounting and Finance
 	for non-Business majors
@@ -232,17 +250,6 @@ Mentoring a group of 12 freshmen and easing their transition to the academic and
 \item Internship Coordinator, Placement Cell \hfill 2013-14 \\
 Involved in the communication and scheduling of various companies as well as universities and assisting them in the process of recruiting of students for internships. Awarded Certificate of Appreciation by Dean, Academic Affairs for exemplary work during the tenure.
 
-\end{itemize}
-
-\section{Teaching}
-\begin{itemize}
-	\item Teaching Assistant, Computer Networks (CS640) \\
-	University of Wisconsin-Madison \hfill Fall 2015 \\
-	Prof. Paul Barford
-	
-	\item Teaching Assistant, Compilers Lab (CS306) \\
-	Indian Institute of Technology, Bombay \hfill Spring 2015 \\
-	Prof. Amitabha Sanyal
 \end{itemize}
 
 
